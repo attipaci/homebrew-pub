@@ -4,11 +4,11 @@ class Crush < Formula
   url "https://github.com/attipaci/crush/releases/download/2.50-1/crush-2.50-1.tar.gz"
   sha256 "e5c95d0dd2fa99a865ae04d6fe8260070cd8507f1cdcce6ad14aef35fba7963f"
 
-  #depends_on "bash" => "3.0"		# Needed? 
-  #depends_on "coreutils" => "5.0"	# Needed?
-  depends_on ":java" => "1.8"		# Any formula providing a java >= 1.8.0
-  #depends_on "jdk" => "1.8"		# An alternative to :java above...
-  depends_on "gnuplot" => ["4.0", :recommended]
+  depends_on "bash"					# >= 3.0
+  depends_on "coreutils"			# >= 5.0
+  #depends_on ":java" => "1.8"		# Any formula providing a java >= 1.8.0
+  depends_on "jdk"					# An alternative to :java above...
+  depends_on "gnuplot" => :recommended
 
   def install
     # ENV.deparallelize  # if your formula fails when building in parallel
