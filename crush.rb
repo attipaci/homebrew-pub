@@ -31,7 +31,7 @@ class Crush < Formula
     bin.install_symlink "#{pkgshare}/detect"
     bin.install_symlink "#{pkgshare}/esorename"
     bin.install_symlink "#{pkgshare}/histogram"
-    bin.install_symlink "#{pkgshare}/difftool"
+    bin.install_symlink "#{pkgshare}/difference"
     bin.install_symlink "#{pkgshare}/imagetool"
     bin.install_symlink "#{pkgshare}/show"
   end
