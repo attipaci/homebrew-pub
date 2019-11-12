@@ -2,7 +2,7 @@ class Crush < Formula
   desc "Data reduction and imaging pipeline for select astronomical cameras"
   homepage "https://www.sigmyne.com/crush"
   url "https://github.com/attipaci/crush/releases/download/2.50-2/crush-2.50-2.tar.gz"
-  sha256 "8ad2ebfa78df775e5c1740db3b32ec8965d89adffe4cc320b23bc935f82d4be5"
+  sha256 "f9194ca4c6878abdad57e0956f34863393de95df6e9cbc79f01a4b3517a96930"
 
   bottle :unneeded
 
