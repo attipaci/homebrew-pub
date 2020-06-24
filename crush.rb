@@ -6,8 +6,8 @@ class Crush < Formula
 
   bottle :unneeded
 
-  depends_on_java '8+'
-  depends_on "gnuplot" => :recommended
+  depends_on :java => '1.8+'
+  depends_on gnuplot => :recommended
 
   def install
     # Install the various bits and pieces to their proper locations
