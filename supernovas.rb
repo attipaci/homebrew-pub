@@ -1,8 +1,8 @@
 class Supernovas < Formula
   desc "High-precision C/C++ astrometry library"
   homepage "https://smithsonian.github.io/SuperNOVAS/"
-  url "https://github.com/Smithsonian/SuperNOVAS/archive/refs/tags/v1.5.0.tar.gz"
-  sha256 "b42e57ccccc46f1a5c5532465dd68abbe6abcd662b99d289491e2887afdd0cca"
+  url "https://github.com/Smithsonian/SuperNOVAS/archive/refs/tags/v1.5.1.tar.gz"
+  sha256 "6215121737b4d659c063d2c49a4a246c85d7ff2d6be3ef14adfcc3203bd35f9f"
   license "Unlicense"
   head "https://github.com/Smithsonian/SuperNOVAS.git", branch: "main"
 
