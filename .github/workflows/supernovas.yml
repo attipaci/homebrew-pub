@@ -1,0 +1,32 @@
+name: supernovas package
+permissions:
+  contents: read
+  pull-requests: write
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'supernovas.rb'
+      - '.github/workflows/supernovas.yml'
+
+  pull_request:
+    paths:
+      - 'supernovas.rb'
+      - '.github/workflows/supernovas.yml'
+
+jobs:
+  basic:
+    name: Check default configuration
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Setup Homebrew
+        uses: Homebrew/actions/setup-homebrew@main
+
+      - name: Build and install
+        run: |
+           brew tap attipaci/pub
+           brew install supernovas
+
