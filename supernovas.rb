@@ -13,12 +13,10 @@ class Supernovas < Formula
 
   option "without-c++", "Compile without C++ API support"
   option "without-calceph", "Compile without CALCEPH bindings"
-  option "with-cspice", "Compile with NAIF CSPICE support"
   option "with-doxygen", "Compile HTML documentation with Doxygen"
 
   depends_on "cmake" => :build
   depends_on "calceph" => :recommended
-  depends_on "cspice" => :optional
   depends_on "doxygen" => :optional
 
   def install
@@ -30,7 +28,6 @@ class Supernovas < Formula
    
     args << "-DENABLE_CPP=ON" if not build.without? "c++" 
     args << "-DENABLE_CALCEPH=ON" if not build.without? "calceph"
-    args << "-DENABLE_CSPICE=ON" if build.with? "cspice" 
     args << "-DBUILD_DOC=ON" if build.with? "doxygen" 
  
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args

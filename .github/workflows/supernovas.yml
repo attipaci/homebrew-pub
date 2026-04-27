@@ -29,8 +29,6 @@ jobs:
             option: --without-calceph
           - description: without C++
             option: --without-c++
-          - description: with CSPICE
-            option: --with-cspice
           - description: with documentation
             option: --with-doxygen
 
