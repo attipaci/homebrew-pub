@@ -1,8 +1,8 @@
 class Xchange < Formula
   desc "Structured data exchange and JSON support for C/C++"
   homepage "https://sigmyne.github.io/xchange/"
-  url "https://github.com/Sigmyne/xchange/archive/refs/tags/v1.1.2-rc1.tar.gz"
-  sha256 "40bc947e8123ac8bf3ab5da823e5e17e5bb6cefe941b3f121fb36dc2262f24af"
+  url "https://github.com/Sigmyne/xchange/archive/refs/tags/v1.1.2.tar.gz"
+  sha256 "d64adf3de2eb4c0341967edb11fa85fe79bbeb08bc7b7807b11cdcddea95e741"
   license "Unlicense"
   head "https://github.com/Sigmyne/xchange.git", branch: "main"
 
