@@ -1,8 +1,8 @@
 class Supernovas < Formula
   desc "High-precision C/C++ astrometry library"
   homepage "https://sigmyne.github.io/SuperNOVAS/"
-  url "https://github.com/Sigmyne/SuperNOVAS/archive/refs/tags/v1.5.1.tar.gz"
-  sha256 "6215121737b4d659c063d2c49a4a246c85d7ff2d6be3ef14adfcc3203bd35f9f"
+  url "https://github.com/Sigmyne/SuperNOVAS/archive/refs/tags/v1.6.0.tar.gz"
+  sha256 "c6dcfcc641c2406b4d5d57e7e946e9cb83b55442c10e694a440e7a9646115241"
   license "Unlicense"
   head "https://github.com/Sigmyne/SuperNOVAS.git", branch: "main"
 
@@ -11,15 +11,28 @@ class Supernovas < Formula
     strategy :github_latest
   end
 
+  option "without-c++", "Compile without C++ API support"
+  option "without-calceph", "Compile without CALCEPH bindings"
+  option "with-cspice", "Compile with NAIF CSPICE support"
+  option "with-doxygen", "Compile HTML documentation with Doxygen"
+
   depends_on "cmake" => :build
-  depends_on "calceph"
+  depends_on "calceph" => :recommended
+  depends_on "cspice" => :optional
+  depends_on "doxygen" => :optional
 
   def install
+    
     args = %W[
       -DBUILD_SHARED_LIBS=ON
-      -DENABLE_CALCEPH=ON
       -DCMAKE_INSTALL_RPATH=#{rpath}
     ]
+   
+    args << "-DENABLE_CPP=ON" if not build.without? "c++" 
+    args << "-DENABLE_CALCEPH=ON" if not build.without? "calceph"
+    args << "-DENABLE_CSPICE=ON" if build.with? "cspice" 
+    args << "-DBUILD_DOC=ON" if build.with? "doxygen" 
+ 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

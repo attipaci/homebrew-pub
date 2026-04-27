@@ -16,10 +16,23 @@ on:
       - 'supernovas.rb'
       - '.github/workflows/supernovas.yml'
 
-jobs:
-  basic:
-    name: Check default configuration
+jobs:           
+  configs:
+    name: Check supernovas
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - description: default configuration
+            option:
+          - description: without Calceph
+            option: --without-calceph
+          - description: without C++
+            option: --without-c++
+          - description: with CSPICE
+            option: --with-cspice
+          - description: with documentation
+            option: --with-doxygen
 
     steps:
       - name: Setup Homebrew
@@ -28,5 +41,4 @@ jobs:
       - name: Build and install
         run: |
            brew tap attipaci/pub
-           brew install supernovas
-
+           brew install supernovas ${{matrix.option}}
