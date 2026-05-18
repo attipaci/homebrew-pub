@@ -1,0 +1,42 @@
+name: redisx package
+permissions:
+  contents: read
+  pull-requests: write
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'redisx.rb'
+      - '.github/workflows/redisx.yml'
+
+  pull_request:
+    paths:
+      - 'redisx.rb'
+      - '.github/workflows/redisx.yml'
+
+jobs:           
+  configs:
+    name: Check redisx
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - description: default configuration
+            option:
+          - description: without libomp
+            option: --without-libomp
+          - description: without openssl
+            option: --without-openssl
+          - description: with documentation
+            option: --with-doxygen
+
+    steps:
+      - name: Setup Homebrew
+        uses: Homebrew/actions/setup-homebrew@main
+
+      - name: Build and install
+        run: |
+           brew tap attipaci/pub
+           brew install redisx ${{matrix.option}}
