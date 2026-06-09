@@ -28,10 +28,12 @@ jobs:
           - description: with documentation
             option: --with-doxygen
 
+    env:
+      HOMEBREW_NO_SANDBOX_LINUX: 1
     steps:
       - name: Setup Homebrew
         uses: Homebrew/actions/setup-homebrew@main
-
+        
       - name: Build and install
         run: |
            brew tap attipaci/pub

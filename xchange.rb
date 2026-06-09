@@ -4,7 +4,13 @@ class Xchange < Formula
   url "https://github.com/Sigmyne/xchange/archive/refs/tags/v1.2.0.tar.gz"
   sha256 "34cc98fdc630f3592443b605ed725fb02c642075d4cb3c227c22f5e37c443367"
   license "Unlicense"
-  head "https://github.com/Sigmyne/xchange.git", branch: "main"
+  head do
+    url "https://github.com/Sigmyne/xchange.git", branch: "main"
+
+    patch do
+      url "https://github.com/attipaci/homebrew-pub/blob/master/xchange-1.2.0-0001.patch"
+    end
+  end
 
   livecheck do
     url :stable
