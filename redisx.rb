@@ -1,8 +1,8 @@
 class Redisx < Formula
   desc "A free and independent Redis / Valkey client library for C/C++"
   homepage "https://sigmyne.github.io/redisx/"
-  url "https://github.com/Sigmyne/redisx/archive/refs/tags/v1.0.4-rc2.tar.gz"
-  sha256 "9de5523053f78acdc6bbc2e3156bf651ad548de0995bd409dd1a15a783e25dea"
+  url "https://github.com/Sigmyne/redisx/archive/refs/tags/v1.0.4.tar.gz"
+  sha256 "7e87edf622dd0c6809bc52918962d5d5969475eca1ccc5a4fc4d899bf0746fb3"
   license "Unlicense"
   head "https://github.com/Sigmyne/redisx.git", branch: "main"
 
@@ -16,7 +16,7 @@ class Redisx < Formula
   option "with-doxygen", "Compile HTML documentation with Doxygen"
 
   depends_on "cmake" => :build
-  depends_on "attipaci/pub/xchange"
+  depends_on "attipaci/pub/xchange" => "1.2.0"
   depends_on "popt"
   depends_on "readline"
   depends_on "libbsd"
