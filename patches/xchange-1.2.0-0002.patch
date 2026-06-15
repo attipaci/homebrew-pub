@@ -1,0 +1,39 @@
+diff --git a/CHANGELOG.md b/CHANGELOG.md
+index 6f32196..7c09af6 100644
+--- a/CHANGELOG.md
++++ b/CHANGELOG.md
+@@ -9,6 +9,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
+ 
+ ## [Unreleased]
+ 
++### Fixed
++
++ - CMake `xchangeConfig` to skip requiting math lib for non-Windows platforms in general, since it's can fail if the 
++   math library is not in the search path, but in the build path, such as in case of some cross builds (see e.g. the
++   vcpkg Android builds)
++
+ ### Added
+ 
+  - Added `xIsDebug()` function to check on `xDebug`. While the global variable is fine in most cases, they are 
+diff --git a/cmake/xchangeConfig.cmake.in b/cmake/xchangeConfig.cmake.in
+index 1742cc7..a8060b0 100644
+--- a/cmake/xchangeConfig.cmake.in
++++ b/cmake/xchangeConfig.cmake.in
+@@ -7,14 +7,6 @@ include(CMakeFindDependencyMacro)
+ # Include targets
+ include("${CMAKE_CURRENT_LIST_DIR}/xchangeTargets.cmake")
+ 
+-# Find math library if needed
+-if(NOT WIN32)
+-    find_library(MATH_LIBRARY m)
+-    if(NOT MATH_LIBRARY)
+-        message(FATAL_ERROR "Math library not found")
+-    endif()
+-endif()
+-
+ # Get include directories from target properties
+ get_target_property(xchange_INCLUDE_DIRS xchange::core INTERFACE_INCLUDE_DIRECTORIES)
+ 
+-- 
+2.54.0
+

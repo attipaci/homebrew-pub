@@ -1,0 +1,47 @@
+diff --git a/CHANGELOG.md b/CHANGELOG.md
+index 7c09af6..d1ca571 100644
+--- a/CHANGELOG.md
++++ b/CHANGELOG.md
+@@ -9,10 +9,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
+ 
+ ## [Unreleased]
+ 
++Upcoming bug-fix release, possbily as early as 1 August 2026.
++
+ ### Fixed
+ 
+- - CMake `xchangeConfig` to skip requiting math lib for non-Windows platforms in general, since it's can fail if the 
+-   math library is not in the search path, but in the build path, such as in case of some cross builds (see e.g. the
++ - CMake `xchangeConfig` to skip requiring math lib for non-Windows platforms in general, since it's can fail if the 
++   math library is in the build path, but not in the search path, such as in case of some cross builds (see e.g. the
+    vcpkg Android builds)
+ 
+ ### Added
+@@ -20,6 +22,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
+  - Added `xIsDebug()` function to check on `xDebug`. While the global variable is fine in most cases, they are 
+    problematic for Windows DLLs. It's better to use purely functional access instead.
+    
++ - `xvprintf()` / `xdprintf()` macros to reference functions instead of global vars (see above comment on Windows
++   DLLs.
++   
+ 
+ ## [1.2.0] - 2026-06-08
+ 
+diff --git a/include/xchange.h b/include/xchange.h
+index bb00226..1dd1c3c 100644
+--- a/include/xchange.h
++++ b/include/xchange.h
+@@ -234,8 +234,8 @@ typedef struct {
+ extern boolean xVerbose;        ///< Switch to enable verbose console output for XChange operations.
+ extern boolean xDebug;          ///< Switch to enable debugging (very verbose) output for XChange operations.
+ 
+-#define xvprintf if(xVerbose) printf        ///< Use for generating verbose output
+-#define xdprintf if(xDebug) printf          ///< Use for generating debug output
++#define xvprintf if(xIsVerbose()) printf        ///< Use for generating verbose output
++#define xdprintf if(xIsDebug()) printf          ///< Use for generating debug output
+ 
+ // In xutil.c ------------------------------------------------>
+ boolean xIsVerbose();
+-- 
+2.54.0
+

@@ -1,0 +1,80 @@
+diff --git a/CHANGELOG.md b/CHANGELOG.md
+index d33e3f9..6f32196 100644
+--- a/CHANGELOG.md
++++ b/CHANGELOG.md
+@@ -7,6 +7,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
+ [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+ 
+ 
++## [Unreleased]
++
++### Added
++
++ - Added `xIsDebug()` function to check on `xDebug`. While the global variable is fine in most cases, they are 
++   problematic for Windows DLLs. It's better to use purely functional access instead.
++   
++
+ ## [1.2.0] - 2026-06-08
+ 
+ High priority bug fixes and version bump.
+diff --git a/include/xchange.h b/include/xchange.h
+index 9ace22e..bb00226 100644
+--- a/include/xchange.h
++++ b/include/xchange.h
+@@ -240,6 +240,7 @@ extern boolean xDebug;          ///< Switch to enable debugging (very verbose) o
+ // In xutil.c ------------------------------------------------>
+ boolean xIsVerbose();
+ void xSetVerbose(boolean value);
++boolean xIsDebug();
+ void xSetDebug(boolean value);
+ int xError(const char *fn, int code);
+ const char *xErrorDescription(int code);
+diff --git a/src/xchange.c b/src/xchange.c
+index ca95a9e..ecd8644 100644
+--- a/src/xchange.c
++++ b/src/xchange.c
+@@ -129,7 +129,6 @@ int x_warn(const char *from, const char *desc, ...) {
+  * @return    TRUE (1) if verbosity is enabled, or else FALSE (0).
+  *
+  * @sa xSetVerbose()
+- * @sa xSetDebug()
+  */
+ boolean xIsVerbose() {
+   return xVerbose;
+@@ -140,18 +139,31 @@ boolean xIsVerbose() {
+  *
+  * @param value   TRUE (non-zero) to enable verbose output, or else FALSE (0).
+  *
+- * @sa xIsVerbose()
++ * @sa xIsVerbose(), xSetDebug()
+  */
+ void xSetVerbose(boolean value) {
+   xVerbose = value ? TRUE : FALSE;
+ }
+ 
++/**
++ * Checks if debug output is enabled
++ *
++ * @return      TRUE (1) if debug output is enabled, otherwise FALSE (0).
++ *
++ * @since 1.2.1
++ *
++ * @sa xSetDebug()
++ */
++boolean xIsDebug() {
++  return xDebug;
++}
++
+ /**
+  * Enables or disables debugging output.
+  *
+  * @param value   TRUE (non-zero) to enable verbose output, or else FALSE (0).
+  *
+- * @sa xSetVerbose()
++ * @sa xIsDebug(), xSetVerbose()
+  */
+ void xSetDebug(boolean value) {
+   xDebug = value ? TRUE : FALSE;
+-- 
+2.54.0
+
