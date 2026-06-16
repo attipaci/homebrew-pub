@@ -1,8 +1,8 @@
 class Supernovas < Formula
   desc "High-precision C/C++ astrometry library"
   homepage "https://sigmyne.github.io/SuperNOVAS/"
-  url "https://github.com/Sigmyne/SuperNOVAS/archive/refs/tags/v1.6.0.tar.gz"
-  sha256 "c6dcfcc641c2406b4d5d57e7e946e9cb83b55442c10e694a440e7a9646115241"
+  url "https://github.com/Sigmyne/SuperNOVAS/archive/refs/tags/v1.7.0.tar.gz"
+  sha256 "88549b70b6f4bbd3790e94c38b960eca7f5c9f005c491950c6eb7f472742ad44"
   license "Unlicense"
   head "https://github.com/Sigmyne/SuperNOVAS.git", branch: "main"
 
@@ -13,10 +13,12 @@ class Supernovas < Formula
 
   option "without-c++", "Compile without C++ API support"
   option "without-calceph", "Compile without CALCEPH bindings"
+  option "without-curl", "Build without curl bindings (disables EOP fetching from IERS)"
   option "with-doxygen", "Compile HTML documentation with Doxygen"
 
   depends_on "cmake" => :build
   depends_on "calceph" => :recommended
+  depends_on "curl" => :recommended
   depends_on "doxygen" => :optional
 
   def install
@@ -28,6 +30,7 @@ class Supernovas < Formula
    
     args << "-DENABLE_CPP=ON" if not build.without? "c++" 
     args << "-DENABLE_CALCEPH=ON" if not build.without? "calceph"
+    args << "-DWITHOUT_CURL=ON" if build.without? "curl"
     args << "-DBUILD_DOC=ON" if build.with? "doxygen" 
  
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
