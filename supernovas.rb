@@ -1,8 +1,8 @@
 class Supernovas < Formula
   desc "High-precision C/C++ astrometry library"
   homepage "https://sigmyne.github.io/SuperNOVAS/"
-  url "https://github.com/Sigmyne/SuperNOVAS/archive/refs/tags/v1.7.0.tar.gz"
-  sha256 "88549b70b6f4bbd3790e94c38b960eca7f5c9f005c491950c6eb7f472742ad44"
+  url "https://github.com/Sigmyne/SuperNOVAS/archive/refs/tags/v1.7.1.tar.gz"
+  sha256 "9709c24e77e287515a6908ed8cf885b87cdd1758c6d3261be98383f74ab7a1af"
   license "Unlicense"
   head "https://github.com/Sigmyne/SuperNOVAS.git", branch: "main"
 
