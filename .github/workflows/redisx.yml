@@ -23,14 +23,10 @@ jobs:
     strategy:
       matrix:
         include:
-          - description: default configuration
-            option:
-          - description: without libomp
-            option: --without-libomp
-          - description: without openssl
-            option: --without-openssl
-          - description: with documentation
-            option: --with-doxygen
+          - option:
+          - option: --without-libomp
+          - option: --without-openssl
+          - option: --with-doxygen
 
     steps:
       - name: Setup Homebrew
