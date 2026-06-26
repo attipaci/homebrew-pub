@@ -1,0 +1,102 @@
+{
+  "name": "supernovas",
+  "full_name": "attipaci/pub/supernovas",
+  "tap": "attipaci/pub",
+  "oldnames": [],
+  "aliases": [],
+  "versioned_formulae": [],
+  "desc": "High-precision C/C++ astrometry library",
+  "license": "Unlicense",
+  "homepage": "https://sigmyne.github.io/SuperNOVAS/",
+  "versions": {
+    "stable": "1.7.1",
+    "head": "HEAD",
+    "bottle": false
+  },
+  "urls": {
+    "stable": {
+      "url": "https://github.com/Sigmyne/SuperNOVAS/archive/refs/tags/v1.7.1.tar.gz",
+      "tag": null,
+      "revision": null,
+      "using": null,
+      "checksum": "9709c24e77e287515a6908ed8cf885b87cdd1758c6d3261be98383f74ab7a1af"
+    },
+    "head": {
+      "url": "https://github.com/Sigmyne/SuperNOVAS.git",
+      "branch": "main",
+      "using": null
+    }
+  },
+  "patches": [],
+  "revision": 0,
+  "version_scheme": 0,
+  "compatibility_version": null,
+  "autobump": true,
+  "no_autobump_message": null,
+  "skip_livecheck": false,
+  "bottle": {},
+  "pour_bottle_only_if": null,
+  "keg_only": false,
+  "keg_only_reason": null,
+  "options": [
+    {
+      "option": "--without-c++",
+      "description": "Compile without C++ API support"
+    },
+    {
+      "option": "--without-calceph",
+      "description": "Compile without CALCEPH bindings"
+    },
+    {
+      "option": "--without-curl",
+      "description": "Build without curl bindings (disables EOP fetching from IERS)"
+    },
+    {
+      "option": "--with-doxygen",
+      "description": "Compile HTML documentation with Doxygen"
+    }
+  ],
+  "build_dependencies": [
+    "cmake"
+  ],
+  "dependencies": [],
+  "test_dependencies": [],
+  "recommended_dependencies": [
+    "calceph",
+    "curl"
+  ],
+  "optional_dependencies": [
+    "doxygen"
+  ],
+  "uses_from_macos": [],
+  "uses_from_macos_bounds": [],
+  "requirements": [],
+  "conflicts_with": [],
+  "conflicts_with_reasons": [],
+  "link_overwrite": [],
+  "caveats": null,
+  "installed": [],
+  "linked_keg": null,
+  "pinned": false,
+  "outdated": false,
+  "deprecated": false,
+  "deprecation_date": null,
+  "deprecation_reason": null,
+  "deprecation_replacement_formula": null,
+  "deprecation_replacement_cask": null,
+  "deprecate_args": null,
+  "disabled": false,
+  "disable_date": null,
+  "disable_reason": null,
+  "disable_replacement_formula": null,
+  "disable_replacement_cask": null,
+  "disable_args": null,
+  "post_install_steps": [],
+  "post_install_defined": false,
+  "service": null,
+  "tap_git_head": "34db9082f230e3641c575fbb9d291203abcb7922",
+  "ruby_source_path": "supernovas.rb",
+  "ruby_source_checksum": {
+    "sha256": "81e984a1f7f316824f4d15f015625a376a0602d4f38a769a430ec4c343a23367"
+  }
+}
