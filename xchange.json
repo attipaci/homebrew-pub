@@ -1,0 +1,103 @@
+{
+  "name": "xchange",
+  "full_name": "attipaci/pub/xchange",
+  "tap": "attipaci/pub",
+  "oldnames": [],
+  "aliases": [],
+  "versioned_formulae": [],
+  "desc": "Structured data exchange and JSON support for C/C++",
+  "license": "Unlicense",
+  "homepage": "https://sigmyne.github.io/xchange/",
+  "versions": {
+    "stable": "1.2.0",
+    "head": "HEAD",
+    "bottle": false
+  },
+  "urls": {
+    "stable": {
+      "url": "https://github.com/Sigmyne/xchange/archive/refs/tags/v1.2.0.tar.gz",
+      "tag": null,
+      "revision": null,
+      "using": null,
+      "checksum": "34cc98fdc630f3592443b605ed725fb02c642075d4cb3c227c22f5e37c443367"
+    },
+    "head": {
+      "url": "https://github.com/Sigmyne/xchange.git",
+      "branch": "main",
+      "using": null
+    }
+  },
+  "patches": [
+    {
+      "strip": "p1",
+      "url": "file:///home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/attipaci/homebrew-pub/patches/xchange-1.2.0-0001.patch",
+      "sha256": "ee9960c6b6560ceab4a3b56dc873d0959032a54e81e65d22b1c31ca362a21f32"
+    },
+    {
+      "strip": "p1",
+      "url": "file:///home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/attipaci/homebrew-pub/patches/xchange-1.2.0-0002.patch",
+      "sha256": "6974ca5e605cad72f6dc430bea493ad7773f1f62c18e6bb39b0c4c42755302a8"
+    },
+    {
+      "strip": "p1",
+      "url": "file:///home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/attipaci/homebrew-pub/patches/xchange-1.2.0-0003.patch",
+      "sha256": "7a0f1289a63ebcc90d176e03d65043b76797185dacdcc9e5973732a18b7c5713"
+    }
+  ],
+  "revision": 0,
+  "version_scheme": 0,
+  "compatibility_version": null,
+  "autobump": true,
+  "no_autobump_message": null,
+  "skip_livecheck": false,
+  "bottle": {},
+  "pour_bottle_only_if": null,
+  "keg_only": false,
+  "keg_only_reason": null,
+  "options": [
+    {
+      "option": "--with-doxygen",
+      "description": "Build with doxygen support"
+    }
+  ],
+  "build_dependencies": [
+    "cmake"
+  ],
+  "dependencies": [],
+  "test_dependencies": [],
+  "recommended_dependencies": [],
+  "optional_dependencies": [
+    "doxygen"
+  ],
+  "uses_from_macos": [],
+  "uses_from_macos_bounds": [],
+  "requirements": [],
+  "conflicts_with": [],
+  "conflicts_with_reasons": [],
+  "link_overwrite": [],
+  "caveats": null,
+  "installed": [],
+  "linked_keg": null,
+  "pinned": false,
+  "outdated": false,
+  "deprecated": false,
+  "deprecation_date": null,
+  "deprecation_reason": null,
+  "deprecation_replacement_formula": null,
+  "deprecation_replacement_cask": null,
+  "deprecate_args": null,
+  "disabled": false,
+  "disable_date": null,
+  "disable_reason": null,
+  "disable_replacement_formula": null,
+  "disable_replacement_cask": null,
+  "disable_args": null,
+  "post_install_steps": [],
+  "post_install_defined": false,
+  "service": null,
+  "tap_git_head": "2742b66664a3067e57dd2f24f3ce9490ac8da26c",
+  "ruby_source_path": "xchange.rb",
+  "ruby_source_checksum": {
+    "sha256": "b3994795f186524a5c6bf8ba1b9debe09d45058ff67adf063c7913342828eedd"
+  }
+}
