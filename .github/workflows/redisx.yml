@@ -1,6 +1,6 @@
 name: redisx package
 permissions:
-  contents: read
+  contents: write
   pull-requests: write
 
 on:
@@ -17,7 +17,7 @@ on:
       - '.github/workflows/redisx.yml'
 
 jobs:           
-  configs:
+  check:
     name: Check redisx
     runs-on: ubuntu-latest
     strategy:
@@ -36,3 +36,31 @@ jobs:
         run: |
            brew tap attipaci/pub
            brew install redisx ${{matrix.option}}
+
+  pkginfo:
+    name: Update package info
+    needs: check
+    if: github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Homebrew
+        uses: Homebrew/actions/setup-homebrew@main
+    
+      - name: Checkout pkginfo branch
+        uses: actions/checkout@v7
+        with:
+          ref: 'pkginfo'
+          path: 'pkginfo'
+    
+      - name: Generate package info
+        run: |
+          brew tap attipaci/pub
+          brew info --json redisx | jq '.[0]? // .' > pkginfo/redisx.json
+
+      - name: Commit and Push package info
+        run: |
+          cd pkginfo
+          git config --global user.email "$GITHUB_JOB+github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions"
+          git add -A
+          git commit -m "automated package info update" && git push || true
