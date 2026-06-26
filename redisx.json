@@ -1,0 +1,111 @@
+{
+  "name": "redisx",
+  "full_name": "attipaci/pub/redisx",
+  "tap": "attipaci/pub",
+  "oldnames": [],
+  "aliases": [],
+  "versioned_formulae": [],
+  "desc": "A free and independent Redis / Valkey client library for C/C++",
+  "license": "Unlicense",
+  "homepage": "https://sigmyne.github.io/redisx/",
+  "versions": {
+    "stable": "1.0.4",
+    "head": "HEAD",
+    "bottle": false
+  },
+  "urls": {
+    "stable": {
+      "url": "https://github.com/Sigmyne/redisx/archive/refs/tags/v1.0.4.tar.gz",
+      "tag": null,
+      "revision": null,
+      "using": null,
+      "checksum": "7e87edf622dd0c6809bc52918962d5d5969475eca1ccc5a4fc4d899bf0746fb3"
+    },
+    "head": {
+      "url": "https://github.com/Sigmyne/redisx.git",
+      "branch": "main",
+      "using": null
+    }
+  },
+  "patches": [],
+  "revision": 0,
+  "version_scheme": 0,
+  "compatibility_version": null,
+  "autobump": true,
+  "no_autobump_message": null,
+  "skip_livecheck": false,
+  "bottle": {},
+  "pour_bottle_only_if": null,
+  "keg_only": false,
+  "keg_only_reason": null,
+  "options": [
+    {
+      "option": "--with-tls",
+      "description": "Compile with TLS support"
+    },
+    {
+      "option": "--with-libomp",
+      "description": "Compile with OpenMP support for parallel cluster operations."
+    },
+    {
+      "option": "--with-doxygen",
+      "description": "Compile HTML documentation with Doxygen"
+    },
+    {
+      "option": "--without-openssl",
+      "description": "Build without openssl support"
+    },
+    {
+      "option": "--without-libomp",
+      "description": "Build without libomp support"
+    }
+  ],
+  "build_dependencies": [
+    "cmake"
+  ],
+  "dependencies": [
+    "attipaci/pub/xchange",
+    "popt",
+    "readline",
+    "libbsd"
+  ],
+  "test_dependencies": [],
+  "recommended_dependencies": [
+    "openssl",
+    "libomp"
+  ],
+  "optional_dependencies": [
+    "doxygen"
+  ],
+  "uses_from_macos": [],
+  "uses_from_macos_bounds": [],
+  "requirements": [],
+  "conflicts_with": [],
+  "conflicts_with_reasons": [],
+  "link_overwrite": [],
+  "caveats": null,
+  "installed": [],
+  "linked_keg": null,
+  "pinned": false,
+  "outdated": false,
+  "deprecated": false,
+  "deprecation_date": null,
+  "deprecation_reason": null,
+  "deprecation_replacement_formula": null,
+  "deprecation_replacement_cask": null,
+  "deprecate_args": null,
+  "disabled": false,
+  "disable_date": null,
+  "disable_reason": null,
+  "disable_replacement_formula": null,
+  "disable_replacement_cask": null,
+  "disable_args": null,
+  "post_install_steps": [],
+  "post_install_defined": false,
+  "service": null,
+  "tap_git_head": "c33a16e5cdb254d31c94c97ff8a4242efdba0198",
+  "ruby_source_path": "redisx.rb",
+  "ruby_source_checksum": {
+    "sha256": "0aecc91d7b982a6950b5ad6552a900d5ef29fa8ab59df8dab6e6ecf0debbad50"
+  }
+}
