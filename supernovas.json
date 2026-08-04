@@ -9,17 +9,17 @@
   "license": "Unlicense",
   "homepage": "https://sigmyne.github.io/SuperNOVAS/",
   "versions": {
-    "stable": "1.7.1",
+    "stable": "1.7.2",
     "head": "HEAD",
     "bottle": false
   },
   "urls": {
     "stable": {
-      "url": "https://github.com/Sigmyne/SuperNOVAS/archive/refs/tags/v1.7.1.tar.gz",
+      "url": "https://github.com/Sigmyne/SuperNOVAS/archive/refs/tags/v1.7.2.tar.gz",
       "tag": null,
       "revision": null,
       "using": null,
-      "checksum": "9709c24e77e287515a6908ed8cf885b87cdd1758c6d3261be98383f74ab7a1af"
+      "checksum": "18f459b23f80c0e017110d26228ea7ffeba48ed26452f00072c719ec9c4cbc58"
     },
     "head": {
       "url": "https://github.com/Sigmyne/SuperNOVAS.git",
@@ -94,9 +94,9 @@
   "post_install_steps": [],
   "post_install_defined": false,
   "service": null,
-  "tap_git_head": "02f5c4e3ac5e4c98208e3a6c462361ba192fbbab",
+  "tap_git_head": "6b035ebfecfd8ac035a395193fab3bd4e3c61786",
   "ruby_source_path": "supernovas.rb",
   "ruby_source_checksum": {
-    "sha256": "81e984a1f7f316824f4d15f015625a376a0602d4f38a769a430ec4c343a23367"
+    "sha256": "61bd7b66c04335939bd434c4aa926800e0df8b611c84a38e2c627ec528c07381"
   }
 }
