@@ -1,29 +1,10 @@
 class Xchange < Formula
   desc "Structured data exchange and JSON support for C/C++"
   homepage "https://sigmyne.github.io/xchange/"
-  url "https://github.com/Sigmyne/xchange/archive/refs/tags/v1.2.0.tar.gz"
-  sha256 "34cc98fdc630f3592443b605ed725fb02c642075d4cb3c227c22f5e37c443367"
+  url "https://github.com/Sigmyne/xchange/archive/refs/tags/v1.3.0.tar.gz"
+  sha256 "e59a9edbe37988d48d8098acb22eab517486e2b51120faf70df51c6566ce0ed3"
   license "Unlicense"
   head "https://github.com/Sigmyne/xchange.git", branch: "main"
-
-  # Patches from upstream commits after 1.2.0 release.
-  # 1. Add xIsDebug()
-  patch do
-    url "file://#{__dir__}/patches/xchange-1.2.0-0001.patch"
-    sha256 "ee9960c6b6560ceab4a3b56dc873d0959032a54e81e65d22b1c31ca362a21f32"
-  end
-
-  # 2. Remove checkis for math lib in package config
-  patch do
-    url "file://#{__dir__}/patches/xchange-1.2.0-0002.patch"
-    sha256 "6974ca5e605cad72f6dc430bea493ad7773f1f62c18e6bb39b0c4c42755302a8"
-  end
-  
-  # 3. Changelog updates for the above two patches
-  patch do
-    url "file://#{__dir__}/patches/xchange-1.2.0-0003.patch"
-    sha256 "7a0f1289a63ebcc90d176e03d65043b76797185dacdcc9e5973732a18b7c5713"
-  end
 
   livecheck do
     url :stable
