@@ -1,8 +1,8 @@
 class Redisx < Formula
   desc "A free and independent Redis / Valkey client library for C/C++"
   homepage "https://sigmyne.github.io/redisx/"
-  url "https://github.com/Sigmyne/redisx/archive/refs/tags/v1.1.0-rc3.tar.gz"
-  sha256 "5c16a03c5351c6025ed27b62dac6080548e939acfe121a66f0415b9cb877e68a"
+  url "https://github.com/Sigmyne/redisx/archive/refs/tags/v1.1.0.tar.gz"
+  sha256 "44e5b7728109be68636675f763b1142cd5aaafb1069286c760cef0d6ad619fdb"
   license "Unlicense"
   head "https://github.com/Sigmyne/redisx.git", branch: "main"
 
