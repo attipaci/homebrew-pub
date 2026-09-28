@@ -1,0 +1,65 @@
+name: smax-clib package
+permissions:
+  contents: write
+  pull-requests: write
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'smax-clib.rb'
+      - '.github/workflows/smax-clib.yml'
+
+  pull_request:
+    paths:
+      - 'smax-clib.rb'
+      - '.github/workflows/smax-clib.yml'
+
+jobs:           
+  check:
+    name: Check smax-clib
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - option:
+          - option: --without-openssl
+          - option: --with-doxygen
+
+    steps:
+      - name: Setup Homebrew
+        uses: Homebrew/actions/setup-homebrew@main
+
+      - name: Build and install
+        run: |
+           brew tap attipaci/pub
+           brew install smax-clib ${{matrix.option}}
+
+  pkginfo:
+    name: Update package info
+    needs: check
+    if: github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Homebrew
+        uses: Homebrew/actions/setup-homebrew@main
+    
+      - name: Checkout pkginfo branch
+        uses: actions/checkout@v7
+        with:
+          ref: 'pkginfo'
+          path: 'pkginfo'
+    
+      - name: Generate package info
+        run: |
+          brew tap attipaci/pub
+          brew info --json smax-clib | jq '.[0]? // .' > pkginfo/smax-clib.json
+
+      - name: Commit and Push package info
+        run: |
+          cd pkginfo
+          git config --global user.email "$GITHUB_JOB+github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions"
+          git add -A
+          git commit -m "automated package info update" && git push || true

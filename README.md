@@ -3,6 +3,7 @@
 ![supernovas version](https://img.shields.io/badge/dynamic/json.svg?url=https://raw.githubusercontent.com/attipaci/homebrew-pub/pkginfo/supernovas.json&query=$.versions.stable&label=supernovas)
 ![xchange version](https://img.shields.io/badge/dynamic/json.svg?url=https://raw.githubusercontent.com/attipaci/homebrew-pub/pkginfo/xchange.json&query=$.versions.stable&label=xchange)
 ![redisx version](https://img.shields.io/badge/dynamic/json.svg?url=https://raw.githubusercontent.com/attipaci/homebrew-pub/pkginfo/redisx.json&query=$.versions.stable&label=redisx)
+![redisx version](https://img.shields.io/badge/dynamic/json.svg?url=https://raw.githubusercontent.com/attipaci/homebrew-pub/pkginfo/smax-clib.json&query=$.versions.stable&label=smax-clib)
 <br clear="all">
 
 
