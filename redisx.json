@@ -103,7 +103,7 @@
   "post_install_steps": [],
   "post_install_defined": false,
   "service": null,
-  "tap_git_head": "dd01658be70128796b8c1b447d80f58878803343",
+  "tap_git_head": "0abc709929ac209ad132f9c4c9879f5170c1a014",
   "ruby_source_path": "redisx.rb",
   "ruby_source_checksum": {
     "sha256": "976d49e21afdf35f8eaa02ce8ba683c74b8a83ac12993d077d681083f3912766"
