@@ -12,7 +12,6 @@ class SmaxClib < Formula
   end
 
   option "with-tls", "Compile with TLS support"
-  option "with-libomp", "Compile with OpenMP support for parallel cluster operations."
   option "with-doxygen", "Compile HTML documentation with Doxygen"
 
   depends_on "cmake" => :build
