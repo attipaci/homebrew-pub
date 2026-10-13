@@ -44,10 +44,6 @@
       "description": "Compile with TLS support"
     },
     {
-      "option": "--with-libomp",
-      "description": "Compile with OpenMP support for parallel cluster operations."
-    },
-    {
       "option": "--with-doxygen",
       "description": "Compile HTML documentation with Doxygen"
     },
@@ -99,9 +95,9 @@
   "post_install_steps": [],
   "post_install_defined": false,
   "service": null,
-  "tap_git_head": "8ca4787ad6fbf91364243cf28cc77eae715dfecd",
+  "tap_git_head": "1a6a7e5e315f049252397afbd3473c06649fa545",
   "ruby_source_path": "smax-clib.rb",
   "ruby_source_checksum": {
-    "sha256": "d94638715f53037db863c4bc5f5223d51c41412971a5e4052e7f551ec419e74a"
+    "sha256": "61c9982b799cfe18177417124e704871e402c54132a3c316fe0440e5e8d8a1de"
   }
 }
