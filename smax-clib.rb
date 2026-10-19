@@ -1,8 +1,8 @@
 class SmaxClib < Formula
   desc "A free C/C++ client library and toolkit for the SMA Exchange (SMA-X) structured real-time database"
   homepage "https://sigmyne.github.io/smax-clib/"
-  url "https://github.com/Sigmyne/smax-clib/archive/refs/tags/v1.1.0-rc1.tar.gz"
-  sha256 "4602c6b03dc58a99ee90023b271d68b7f9bf156081dfea1925e46b1e688a8477"
+  url "https://github.com/Sigmyne/smax-clib/archive/refs/tags/v1.1.0.tar.gz"
+  sha256 "420608e89e2df23b030d2ad6842f419161c460c92ea478c7cc2e5bb941956f79"
   license "Unlicense"
   head "https://github.com/Sigmyne/smax-clib.git", branch: "main"
 
